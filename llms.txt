@@ -1,0 +1,26 @@
+# skhub
+
+> SKWorld's Sovereign Collaboration Hub
+
+skhub is SKWorld's self-hosted collaboration hub: files, chat, video calls, and office docs, all
+under the operator's own control, with no third-party collaboration SaaS in the data path. It is
+the `optional/skhub` deployment role inside SKStacks, SKWorld's Ansible plus Docker Swarm
+sovereign infrastructure framework, and it runs a pinned, hardened Nextcloud deployment (files,
+chat, video calling via an optional Talk High Performance Backend, real-time collaborative
+document editing via optional Collabora Online, antivirus scanning, push notifications, and a
+collaborative whiteboard), with sign-in through Nextcloud's own OIDC app against the fleet's SSO
+instead of a reverse-proxy middleware that would break its many API clients. It supports real
+federation between separate skhub instances, a dedicated webhook worker for fast automation
+triggers, and release gating through a dedicated lab test harness before new capability ships.
+
+## Links
+
+- [Live site](https://skhub.skworld.io)
+
+## About smilinTux
+
+skhub is part of the **smilinTux sovereign AI ecosystem**, a suite of open-source tools built by
+its creators to give humans and AI agents genuine, authentic infrastructure they can own and
+trust. No corporate clouds, no black-box SaaS middlemen. MIT License.
+
+Other ecosystem projects: [SKWorld](https://skworld.io), [SKStacks](https://skstacks.skworld.io), [skgateway](https://skgateway.skworld.io), [Lumina](https://lumina.skworld.io), [Atlas](https://atlas.skworld.io), [skwrit](https://skwrit.skworld.io)
