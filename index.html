@@ -4,13 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>skhub · SKWorld's Sovereign Collaboration Hub 🗂️</title>
-  <meta name="description" content="skhub is SKWorld's self-hosted collaboration hub: files, chat, video calls, and office docs, all under your own control. Nextcloud, hardened and lab-gated, with no third-party collaboration SaaS in the loop.">
+  <meta name="description" content="skhub is SKWorld's self-hosted collaboration hub: files, chat, video calls, and office docs, all under your own control, with AI agents as real teammates in the room. Nextcloud, hardened and lab-gated, with no third-party collaboration SaaS in the loop.">
   <link rel="canonical" href="https://skhub.skworld.io/">
+
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="skhub · SKWorld">
   <meta property="og:title" content="skhub · SKWorld's Sovereign Collaboration Hub">
-  <meta property="og:description" content="Files, chat, video calls, and office docs, all under your own control. No third-party collaboration SaaS. Part of the SKWorld sovereign AI ecosystem.">
+  <meta property="og:description" content="Files, chat, video calls, and office docs, all under your own control, with your AI agents as real teammates in the room. Part of the SKWorld sovereign AI ecosystem.">
   <meta property="og:url" content="https://skhub.skworld.io/">
+  <meta property="og:image" content="https://skhub.skworld.io/og.png">
+  <meta property="og:image:secure_url" content="https://skhub.skworld.io/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="skhub: files, chat, calls, docs, your agents in the room">
+  <meta property="og:locale" content="en_US">
+
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@smilinTux">
+  <meta name="twitter:creator" content="@smilinTux">
+  <meta name="twitter:title" content="skhub · SKWorld's Sovereign Collaboration Hub">
+  <meta name="twitter:description" content="Files, chat, video calls, and office docs, all under your own control, with your AI agents as real teammates in the room.">
+  <meta name="twitter:image" content="https://skhub.skworld.io/og.png">
+  <meta name="twitter:image:alt" content="skhub: files, chat, calls, docs, your agents in the room">
+
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗂️</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -18,29 +35,30 @@
     :root{--teal:#2dd4bf;--blue:#60a5fa;--ink:#e6eef0;--muted:rgba(230,238,240,.72);--panel:rgba(45,212,191,.05);--line:rgba(45,212,191,.28)}
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Inter',system-ui,sans-serif;background:radial-gradient(ellipse at top,#0d1b1e 0%,#061012 60%);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
-    .wrap{max-width:960px;margin:0 auto;padding:0 1.4rem}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 1.4rem}
     .mono{font-family:'JetBrains Mono',monospace}
     .eyebrow{color:var(--teal);letter-spacing:.18em;font-size:.8rem;text-transform:uppercase}
     a{color:var(--blue);text-decoration:none}
     a:hover{color:#fff}
-    nav{border-bottom:1px solid rgba(45,212,191,.15);padding:1rem 0}
+    nav{border-bottom:1px solid rgba(45,212,191,.15);padding:1rem 0;position:sticky;top:0;background:#071214;z-index:10}
     nav .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
     .nav-logo{font-family:'JetBrains Mono',monospace;font-weight:700;color:#fff;font-size:1rem;letter-spacing:.02em}
     .nav-logo span{color:var(--teal)}
-    .nav-links{display:flex;gap:1.2rem;flex-wrap:wrap;font-size:.88rem}
+    .nav-links{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.85rem}
     .nav-links a{color:var(--muted)}
     .nav-links a:hover{color:var(--teal)}
     header{text-align:center;padding:4.5rem 0 3rem}
     .icon{font-size:4rem;line-height:1}
     h1{font-size:3.2rem;font-weight:800;letter-spacing:.03em;margin:.6rem 0 .2rem;background:linear-gradient(90deg,#fff,var(--teal));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
     .tag{font-size:1.3rem;color:var(--teal);font-weight:600;margin-top:.4rem}
-    .sub{color:var(--muted);font-size:1.1rem;max-width:660px;margin:1rem auto 0}
+    .sub{color:var(--muted);font-size:1.1rem;max-width:680px;margin:1rem auto 0}
     .badges{margin:1.8rem 0 0;display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
     .badge{border:1px solid var(--line);border-radius:999px;padding:.5rem 1.05rem;font-family:'JetBrains Mono',monospace;font-size:.82rem;color:var(--teal);background:var(--panel);transition:all .25s}
     .badge:hover{border-color:var(--teal);color:#fff}
-    section{padding:2.4rem 0;border-top:1px solid rgba(255,255,255,.06)}
+    section{padding:2.6rem 0;border-top:1px solid rgba(255,255,255,.06)}
     h2{font-size:1.7rem;color:#fff;margin-bottom:1rem;font-weight:700}
     h2 .n{color:var(--teal);font-family:'JetBrains Mono',monospace;font-size:1.1rem;margin-right:.5rem}
+    h3.sub-h{color:var(--teal);font-size:1.15rem;margin:1.6rem 0 .6rem;font-weight:700}
     p{color:var(--muted);margin-bottom:.9rem}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:1rem}
     .card{border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:1.2rem;background:rgba(255,255,255,.02)}
@@ -50,6 +68,10 @@
     ol.arts li{counter-increment:a;border-left:2px solid var(--line);padding:.2rem 0 1rem 1.2rem;position:relative}
     ol.arts li::before{content:counter(a);position:absolute;left:-.85rem;top:0;background:var(--teal);color:#061012;width:1.5rem;height:1.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:600;font-size:.8rem}
     ol.arts strong{color:#fff}
+    ol.steps{counter-reset:s;margin-top:.8rem;display:grid;gap:.7rem}
+    ol.steps li{counter-increment:s;list-style:none;padding-left:2.6rem;position:relative;color:var(--muted)}
+    ol.steps li::before{content:counter(s);position:absolute;left:0;top:-.1rem;width:1.9rem;height:1.9rem;border-radius:8px;background:var(--panel);border:1px solid var(--line);color:var(--teal);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.9rem}
+    ol.steps strong{color:#fff}
     .flow{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:var(--blue);background:rgba(96,165,250,.05);border:1px solid rgba(96,165,250,.2);border-radius:12px;padding:1rem 1.2rem;overflow-x:auto;white-space:pre;margin-top:.6rem}
     table.spec{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.92rem}
     table.spec th,table.spec td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid rgba(255,255,255,.08)}
@@ -61,12 +83,33 @@
     .btn:hover{border-color:var(--teal);color:#fff}
     .btn.bl{border-color:rgba(96,165,250,.35);color:var(--blue)}
     .btn.bl:hover{border-color:var(--blue);color:#fff}
+    .pill{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.22rem .65rem;margin-left:.5rem;vertical-align:middle}
+    .pill.soon{color:#fbbf24;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.35)}
+    .pill.live{color:var(--teal);background:var(--panel);border:1px solid var(--line)}
+    .disclosure{font-size:.85rem;color:rgba(230,238,240,.55);border:1px dashed rgba(230,238,240,.18);border-radius:10px;padding:.8rem 1rem;margin:1rem 0 1.4rem}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem;margin-top:1rem}
+    .shot{border:1px solid rgba(255,255,255,.1);border-radius:12px;overflow:hidden;background:#05090a}
+    .shot img{width:100%;display:block}
+    .shot figcaption{padding:.65rem .85rem;font-size:.82rem;color:var(--muted);border-top:1px solid rgba(255,255,255,.07)}
+    .mode-table td code{color:var(--teal)}
+    .mock{border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.3rem;background:linear-gradient(180deg,rgba(45,212,191,.04),rgba(255,255,255,.015));margin-top:1rem}
+    .mock-label{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(230,238,240,.45);margin-bottom:.9rem}
+    .bubble-row{display:flex;gap:.7rem;margin-bottom:.85rem;align-items:flex-start}
+    .bubble-row.me{flex-direction:row-reverse}
+    .avatar{width:2.1rem;height:2.1rem;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+    .avatar.agent{background:var(--panel);border-color:var(--line)}
+    .bubble{max-width:72%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:.6rem .85rem;font-size:.92rem;color:var(--ink)}
+    .bubble-row.me .bubble{background:rgba(96,165,250,.1);border-color:rgba(96,165,250,.25)}
+    .bubble .who{font-size:.72rem;color:var(--teal);font-weight:600;margin-bottom:.15rem;display:flex;align-items:center;gap:.4rem}
+    .bubble .who .reacting{font-size:.8rem;color:rgba(230,238,240,.5);font-weight:400}
+    .typing-dots{display:inline-flex;gap:.2rem;vertical-align:middle}
+    .typing-dots span{width:.3rem;height:.3rem;border-radius:50%;background:var(--teal);opacity:.6}
     footer{text-align:center;padding:3rem 0 2.5rem;color:rgba(255,255,255,.4);border-top:1px solid rgba(255,255,255,.06);margin-top:1rem}
     footer .mono{font-size:.82rem}
     .foot-links{display:flex;gap:1.4rem;flex-wrap:wrap;justify-content:center;margin:1.2rem 0;font-size:.85rem}
     .foot-links a{color:var(--muted)}
     .foot-links a:hover{color:var(--teal)}
-    @media(max-width:600px){h1{font-size:2.3rem}.icon{font-size:3rem}.nav-links{font-size:.8rem;gap:.8rem}}
+    @media(max-width:600px){h1{font-size:2.3rem}.icon{font-size:3rem}.nav-links{font-size:.76rem;gap:.7rem}.bubble{max-width:85%}}
   </style>
 </head>
 <body>
@@ -75,8 +118,11 @@
       <a class="nav-logo" href="/">sk<span>hub</span></a>
       <div class="nav-links">
         <a href="#what">What it is</a>
-        <a href="#why">Why this way</a>
-        <a href="#flow">How it fits</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#agents">Agents</a>
+        <a href="#security">Security</a>
+        <a href="#calls">Calls</a>
+        <a href="#flow">Workflows</a>
         <a href="https://github.com/smilinTux/skstacks/blob/main/v1/ansible/optional/skhub/README.md" target="_blank" rel="noopener">Source</a>
         <a href="https://skworld.io" target="_blank" rel="noopener">🐧 SKWorld</a>
       </div>
@@ -88,12 +134,12 @@
       <div class="icon">🗂️</div>
       <div class="mono eyebrow">optional/skhub · v1</div>
       <h1>skhub</h1>
-      <div class="tag">Files. Chat. Video. Docs. All under your own roof.</div>
-      <p class="sub">skhub is SKWorld's self-hosted collaboration hub: a hardened, pinned Nextcloud deployment for a sovereign fleet. No third-party collaboration SaaS, no surprise cloud dependency, every setting checked into version control.</p>
+      <div class="tag">Files. Chat. Video. Docs. Your agents in the room.</div>
+      <p class="sub">skhub is SKWorld's self-hosted collaboration hub: a hardened, pinned Nextcloud deployment for a sovereign fleet, where AI agents sit in chat and on calls as real teammates, not bolted-on bots. No third-party collaboration SaaS, no surprise cloud dependency, every setting checked into version control.</p>
       <div class="badges">
-        <a class="badge" href="#what">📦 What it bundles</a>
-        <a class="badge" href="#why">🛡️ Why this way</a>
-        <a class="badge" href="#flow">🔄 How it fits</a>
+        <a class="badge" href="#screenshots">📸 See it live</a>
+        <a class="badge" href="#agents">🤖 Agents in the room</a>
+        <a class="badge" href="#security">🛡️ Security</a>
         <a class="badge" href="https://skwrit.skworld.io" target="_blank" rel="noopener">✍️ skwrit</a>
       </div>
     </div>
@@ -114,57 +160,141 @@
       <p style="margin-top:1rem">Every image is pinned by digest, never a bare tag, and every setting comes from a per-environment vault file, never hardcoded into the playbook.</p>
     </section>
 
-    <section id="why">
-      <h2><span class="n">§</span>Why this is the right way to run it</h2>
+    <section id="screenshots">
+      <h2><span class="n">§</span>See it live</h2>
+      <p>skhub is a real, running Nextcloud instance, not a mockup. Here is what it actually looks like.</p>
+      <div class="disclosure">📋 <strong>How these were taken:</strong> every screenshot below is from a temporary demo account, created on a live skhub instance just for this page, with generic placeholder content ("Sprint Planning", a short chat, a couple of files). The account, its conversation, and its files were deleted immediately after. No real team conversations, files, or people appear anywhere on this page.</div>
+      <div class="gallery">
+        <figure class="shot">
+          <img src="img/dashboard.webp" alt="skhub dashboard showing recommended files, calendar events, mail, and Talk mentions in one view" loading="lazy">
+          <figcaption><span class="pill live">Live</span> The dashboard: files, calendar, mail, and Talk mentions, one view, your own instance.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/talk-chat.webp" alt="A Nextcloud Talk conversation showing a short team chat, including a message mentioning an agent teammate by name" loading="lazy">
+          <figcaption><span class="pill live">Live</span> A Talk conversation. This is the exact chat surface an agent teammate sits in.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/files.webp" alt="The Nextcloud Files app showing folders and documents, synced the same way across web, desktop, and mobile" loading="lazy">
+          <figcaption><span class="pill live">Live</span> Files, synced the same way a desktop or mobile client would see them.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/talk-rooms.webp" alt="The Nextcloud Talk conversation list, showing several chat threads" loading="lazy">
+          <figcaption><span class="pill live">Live</span> Conversations list: every thread, meeting, and DM in one sidebar.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/calendar.webp" alt="The Nextcloud Calendar month view" loading="lazy">
+          <figcaption><span class="pill live">Live</span> Calendar, synced over CalDAV with the rest of the fleet.</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="img/new-doc-menu.webp" alt="The new file menu, showing options to create a Document, Spreadsheet, Diagram, or Whiteboard" loading="lazy">
+          <figcaption><span class="pill live">Live</span> New document, spreadsheet, diagram, or whiteboard, editable live via Collabora.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="agents">
+      <h2><span class="n">§</span>Agents in the room, not bolted on</h2>
+      <p>The point of skhub is not just that your files live somewhere you control. It is that your AI agents can work alongside you there, the same way a human teammate would: reading a shared folder, joining a conversation, picking up an @mention, sitting quietly in a room until something is actually worth saying.</p>
+      <p>That is built on <a href="https://github.com/chefboyrdave21/hermes-nextcloud-talk" target="_blank" rel="noopener"><code>hermes-nextcloud-talk</code></a>, a Nextcloud Talk connector for <a href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">Hermes Agent</a> that we built and contributed upstream (merged into Hermes's own plugin catalog, <a href="https://github.com/NousResearch/hermes-agent/pull/140445" target="_blank" rel="noopener">PR #140445</a>). It ships as one plugin with two independent connector modes, so you pick the integration style that fits each agent.</p>
+
+      <h3 class="sub-h">Two ways in: bot, or real user</h3>
+      <table class="spec mode-table">
+        <tr><th>Mode</th><th>What the agent looks like</th><th>Good for</th></tr>
+        <tr><td><strong>Bot</strong></td><td>No personal account. Talk's own signed Bot API (HMAC-SHA256 both directions); a moderator opts a room in with <code>occ talk:bot:setup</code>.</td><td>A clean, no-account integration, opt-in per room, with an inbound webhook listener.</td></tr>
+        <tr><td><strong>User</strong></td><td>A genuine Nextcloud account with an app password, long-polling the Chat REST API like any human client.</td><td>DMs, invites into any room, and federation across estates, with no inbound port exposed at all.</td></tr>
+      </table>
+      <p style="margin-top:.9rem">Either way, a room can run in one of three modes: <code>mention</code> (reply only when @mentioned, the default), <code>watch</code> (read every message, speak only when something is actually worth saying), or <code>free</code> (reply to everything, for a room dedicated to that agent). DMs always run in <code>free</code> mode in user mode, since there is no third party in the room to stay quiet in front of.</p>
+
+      <h3 class="sub-h">What it looks like</h3>
+      <div class="mock">
+        <div class="mock-label">🎨 Illustrative mockup, built in skhub's own style, not a live screenshot</div>
+        <div class="bubble-row me">
+          <div class="avatar">🧑</div>
+          <div class="bubble"><div class="who">You</div>Can someone check why the nightly deploy failed? @Lumina</div>
+        </div>
+        <div class="bubble-row">
+          <div class="avatar agent">🤖</div>
+          <div class="bubble"><div class="who">Lumina <span class="reacting">👀 reacted · typing <span class="typing-dots"><span></span><span></span><span></span></span></span></div>pulling the deploy log now, one sec</div>
+        </div>
+        <div class="bubble-row">
+          <div class="avatar agent">🤖</div>
+          <div class="bubble"><div class="who">Lumina</div>Found it: the healthcheck start_period was too short for a slow first install. Fix is in the skhub README changelog, I can open a PR if you want.</div>
+        </div>
+      </div>
+      <p>Your agents show up with their own name and avatar, a typing indicator while they work, and an 👀 reaction the moment they pick up a mention, the same social cues a human teammate gives. <strong>Lumina</strong> (the fleet's assistant agent) and <strong>Jarvis</strong> (its terminal-side agent) are two examples running this way today, each with their own curated set of tools and their own account, invited into exactly the rooms they need to be in.</p>
+
+      <h3 class="sub-h">Federation: chat across two sovereign hubs</h3>
+      <p>Talk federation lets two separate skhub instances, each with its own Talk HPB, exchange chat, reactions, and calls over the OCM protocol, group-restricted and opt-in on each side. An agent on one estate's skhub can be invited into a federated room on another estate's skhub, and the adapter auto-accepts an invitation only from an explicitly allow-listed inviter; every other invite is left pending for a human to look at, never auto-declined, never silently accepted.</p>
+
+      <h3 class="sub-h">Add your own agent</h3>
+      <ol class="steps">
+        <li><strong>Pick a mode.</strong> Bot (no personal account, webhook-driven) or user (a real account, app password, long-polling, DMs and federation).</li>
+        <li><strong>Create the credential.</strong> Bot: <code>occ talk:bot:install</code> with a generated secret. User: a dedicated Nextcloud account plus an app password from Settings → Security.</li>
+        <li><strong>Point Hermes at it.</strong> Set the matching environment variables (<code>NEXTCLOUD_TALK_SECRET</code>/<code>NEXTCLOUD_TALK_BASE_URL</code> for bot mode, or <code>NEXTCLOUD_TALK_SERVER_URL</code>/<code>NEXTCLOUD_TALK_APP_PASSWORD</code> for user mode); the plugin picks the mode automatically from which credential is set.</li>
+        <li><strong>Invite it in.</strong> Enable the bot per room, or invite the user account to a room or DM like any teammate. Done.</li>
+      </ol>
+      <div class="cta">
+        <a class="btn" href="https://github.com/chefboyrdave21/hermes-nextcloud-talk" target="_blank" rel="noopener">hermes-nextcloud-talk on GitHub</a>
+        <a class="btn bl" href="https://github.com/NousResearch/hermes-agent" target="_blank" rel="noopener">Hermes Agent</a>
+      </div>
+    </section>
+
+    <section id="security">
+      <h2><span class="n">§</span>Security, the boring and important kind</h2>
       <p>skhub is not "Nextcloud with defaults." It is Nextcloud run the way a sovereign fleet actually needs it run, with the rough edges found and fixed under real load, not assumed away.</p>
       <ol class="arts">
         <li><strong>Sovereign by default, not by promise.</strong> File data, chat, video signaling, and documents all run on infrastructure the operator controls. There is no collaboration SaaS vendor in the data path, and the storage backend decision (NFS, external S3, or the fleet's own skstor) is made once, deliberately, up front, because Nextcloud only reads its S3 configuration on first install.</li>
+        <li><strong>CrowdSec at the edge.</strong> skhub sits behind <a href="https://sksec.skworld.io" target="_blank" rel="noopener">sksec</a>, SKWorld's shared edge layer: CrowdSec behavioral detection plus a fail-closed Traefik bouncer in front of every service, so abusive traffic is stopped before it reaches Nextcloud at all.</li>
         <li><strong>SSO that doesn't break the clients.</strong> Nextcloud is as much an API (WebDAV, CalDAV, OCS, notify_push, Talk signaling) as it is a web app, so skhub deliberately skips a reverse-proxy SSO middleware that would break every one of those clients. Sign-in goes through Nextcloud's own <code>user_oidc</code> app against the fleet's Authentik instance (<em>sksso</em>), with automatic group mapping, a documented deprovisioning path, and a break-glass local login for recovery. Automation keeps local app passwords, never an SSO identity.</li>
-        <li><strong>Measured fixes, not guesses.</strong> The stock ClamAV config's database-reload memory spike was measured at +94% RSS; the tuned config removes that spike entirely while keeping the same signature database resident. NFS latency was measured causing real slowdowns (an admin integrity check took over five minutes over NFS in one case, and database-adjacent NFS latency measured as high as roughly 124ms round-trip in another), which is why skhub offers an option to pin the code tree and database/Redis data onto local disk on a specific node instead.</li>
+        <li><strong>Scanned uploads, tuned not to choke.</strong> Every upload is scanned by ClamAV. The stock config's database-reload memory spike was measured at +94% RSS; the tuned config removes that spike entirely while keeping the same signature database resident.</li>
+        <li><strong>Encrypted backups, at a fixed time, every night.</strong> A nightly <code>db-backup</code> sidecar dumps the database on a fixed wall-clock schedule (DST-correct), rather than drifting with whenever the container last restarted, so backups land at a predictable time every night and the retention window is known, not guessed.</li>
+        <li><strong>Found in production, fixed the same release cycle.</strong> A production backup job once took a full table lock for its entire multi-minute dump and queued over a hundred live Nextcloud queries behind it, stalling Talk and the web UI; the fix (<code>--single-transaction --quick</code>) landed with a dedicated regression test the same cycle it was found. A separate incident had Nextcloud's first install crash-looping on a busy host because the container healthcheck's grace period was shorter than the install itself was allowed to take; same pattern, same day, fixed and tested.</li>
         <li><strong>Deploys fail loudly, not silently.</strong> A "mount drift" check refuses a deploy that would silently drop a live, still-in-use external storage mount. A config mistake shows up before it touches the running stack, not after someone notices a storage connection is gone.</li>
-        <li><strong>Real federation, not a marketing checkbox.</strong> Two separate skhub instances, each with its own Talk HPB, can federate chat, reactions, and calls over the OCM protocol between separate operator estates. File sharing federates separately through normal Nextcloud federated shares. This is tested end to end, not assumed to work.</li>
-        <li><strong>Nothing ships on claims alone.</strong> New skhub capability is release-gated by a dedicated lab stage in the project's own test harness (<em>skstack06</em>), which exercises the feature end to end against a real, disposable Nextcloud + Talk + Collabora stack: a real TURN allocation through the TLS-over-443 path, a real SMTP delivery through a lab mail server, a real bind-mount drop-and-refuse. This lab has already caught real bugs, including a healthcheck timing issue that made Nextcloud's first install crash-loop on a busy host.</li>
+        <li><strong>Nothing ships on claims alone.</strong> New skhub capability is release-gated by a dedicated lab stage in the project's own test harness (<em>skstack06</em>), which exercises the feature end to end against a real, disposable Nextcloud + Talk + Collabora stack: a real TURN allocation through the TLS-over-443 path, a real SMTP delivery through a lab mail server, a real bind-mount drop-and-refuse, a real federated chat message exchanged between two throwaway accounts on two separate instances.</li>
       </ol>
     </section>
 
-    <section id="talk">
-      <h2>Chat and video that work off the LAN</h2>
+    <section id="calls">
+      <h2><span class="n">§</span>Calls that work off the LAN</h2>
       <p>With the optional Talk HPB enabled, Nextcloud Talk gets its own TURN/STUN relay (eturnal), so calls work from outside the local network, not just inside it. A TLS-over-443 fallback keeps calls working on networks that block the raw TURN port, and port sizing follows a simple rule of thumb: roughly 2 x N² relay ports for an N-person call outside the LAN.</p>
       <table class="spec">
         <tr><th>Capability</th><th>Detail</th></tr>
         <tr><td><strong>Relay</strong></td><td>eturnal STUN/TURN, for calls reaching beyond the local network</td></tr>
         <tr><td><strong>Fallback</strong></td><td>TLS over 443, for networks that block the raw TURN port</td></tr>
+        <tr><td><strong>Recording</strong></td><td>A dedicated <code>talk-recording</code> service, CPU/memory tunable per instance</td></tr>
+        <tr><td><strong>AI transcription</strong></td><td>Nextcloud's Assistant (speech-to-text) wired through <em>skgateway</em> to the operator's own self-hosted model, never a hardcoded cloud model id, off by default</td></tr>
         <tr><td><strong>Federation</strong></td><td>Chat, reactions, and calls federate over OCM between two skhub instances, each using its own HPB</td></tr>
         <tr><td><strong>File sharing</strong></td><td>Does not federate through Talk; handled through standard Nextcloud federated shares instead</td></tr>
       </table>
+
+      <h3 class="sub-h">Coming soon: your agent, with a voice <span class="pill soon">rolling out</span></h3>
+      <p>We have already proven an agent joining a live call with real-time voice, not canned audio: barge-in (the agent stops talking the instant you start), a spoken "working on it" filler while it looks something up, a live listening/thinking/speaking state, and a rendered avatar video track confirmed in a real browser. That proof of concept runs today on SKWorld's LiveKit-based conferencing surface. The next step is wiring that same agent-in-the-call capability into skhub's own Nextcloud Talk, so an agent can pick up a Talk call the same way it already picks up a Talk chat. <strong>This is not generally available yet.</strong> It is actively rolling out; this page will update the moment it ships in skhub.</p>
     </section>
 
     <section id="flow">
-      <h2><span class="n">§</span>How it fits the workflow</h2>
-      <p>skhub is the fleet's "files, chat, video, docs" layer. It is built to sit next to the fleet's own workflow engine (<em>skflow</em>, built on Windmill), the fleet's own SSO (<em>sksso</em>, Authentik), and the fleet's own local-inference gateway (<em>skgateway</em>), rather than standing alone.</p>
-      <div class="flow">file lands in skhub (Nextcloud)
+      <h2><span class="n">§</span>Workflows: skwrit and skflow</h2>
+      <p>skhub is the fleet's "files, chat, video, docs" layer, and it is built to sit next to the rest of the stack rather than stand alone: the fleet's own matter engine (<a href="https://skwrit.skworld.io" target="_blank" rel="noopener"><em>skwrit</em></a>), its own workflow engine (<em>skflow</em>, built on Windmill), its own SSO (<em>sksso</em>, Authentik), and its own local-inference gateway (<em>skgateway</em>).</p>
+      <div class="flow">skwrit drafts  ->  quality gate  ->  independent review  ->  release
+  ->  published straight into skhub (Nextcloud), re-download verified
+
+a file lands in skhub (Nextcloud)
   ->  webhook_listeners fires an event
   ->  dedicated webhook worker delivers it  (~4s, vs. up to 5 min on cron alone)
   ->  skflow (Windmill) picks it up and runs the workflow
-  ->  result/document written back into skhub
+  ->  a Talk notification or a reply can be sent, or a new document written back
 
 sign-in:  user  ->  skhub login  ->  user_oidc  ->  sksso (Authentik)
-                  <-  group/account mapped automatically  <-
-
-AI features:  Nextcloud Assistant  ->  skgateway (OpenAI-compatible)
-                                     ->  operator's own self-hosted model
-                                     (never a hardcoded cloud model id, never OpenAI's cloud)</div>
+                  <-  group/account mapped automatically  <-</div>
       <div class="grid" style="margin-top:1.4rem">
+        <div class="card"><h3>skwrit, end to end</h3><p>Drafting with quality gates, an independent review step, and a release step, publishing straight into skhub, with a re-download check that confirms the published copy matches what was sent.</p></div>
         <div class="card"><h3>Fast webhooks</h3><p>A dedicated background-job worker handles webhook delivery for Nextcloud's <code>webhook_listeners</code> app. Without it, a webhook waits for the next 5-minute cron cycle; with it, delivery has been measured at about 4 seconds on a live instance.</p></div>
-        <div class="card"><h3>skflow integration</h3><p>That fast delivery is what makes skhub useful as a trigger for the fleet's workflow engine: a file landing in Nextcloud can kick off a workflow almost immediately instead of minutes later.</p></div>
+        <div class="card"><h3>skflow (Windmill)</h3><p>That fast delivery is what makes skhub useful as a trigger for the fleet's workflow engine: a file landing, a chat message, or a call can kick off a workflow almost immediately instead of minutes later.</p></div>
         <div class="card"><h3>skgateway for AI</h3><p>Nextcloud's built-in Assistant (chat, summarize, rewrite, translate, speech-to-text) runs against the operator's own self-hosted models through skgateway's model aliases. Image generation and cloud TTS are left disabled rather than silently falling back to a cloud default.</p></div>
-        <div class="card"><h3>Shared ground truth</h3><p>The fleet's AI agents, including the assistant agent (<em>Lumina</em>) and the operations agent (<em>Atlas</em>), can use skhub as a shared storage and collaboration surface the same way a human team would, since every client (web, desktop sync, mobile, WebDAV, CalDAV) talks to the same real Nextcloud underneath.</p></div>
       </div>
     </section>
 
     <section id="ops">
-      <h2>Backups and release process</h2>
-      <p>A nightly <code>db-backup</code> sidecar dumps the database on a fixed wall-clock schedule (for example 03:00 in a chosen timezone, DST-correct), rather than just "every N hours from whenever it started," so backups land at a predictable time every night.</p>
+      <h2>Release process</h2>
       <p>skhub deploys through a standard Ansible playbook (<code>deploy_skhub-&lt;env&gt;.yml</code>) run per environment, dev, staging, prod, with every setting coming from a per-environment vault file. New capability is release-gated by the <em>skstack06</em> lab harness before it is considered released, an evidenced practice with real bugs caught, not an aspirational claim.</p>
       <div class="cta">
         <a class="btn" href="https://github.com/smilinTux/skstacks/blob/main/v1/ansible/optional/skhub/README.md" target="_blank" rel="noopener">Read the skhub README</a>
@@ -174,20 +304,22 @@ AI features:  Nextcloud Assistant  ->  skgateway (OpenAI-compatible)
 
     <section id="family">
       <h2>Part of the ecosystem</h2>
-      <p>skhub holds the files. <a href="https://skwrit.skworld.io" target="_blank" rel="noopener">skwrit</a> is the matter engine that turns taught processes into verified, published paperwork, and publishes its finished documents straight into skhub. Both are part of <a href="https://skworld.io" target="_blank" rel="noopener">SKWorld</a>, the sovereign AI ecosystem where you own the whole stack, from silicon to soul.</p>
+      <p>skhub holds the files, the chat, and the calls. <a href="https://skwrit.skworld.io" target="_blank" rel="noopener">skwrit</a> is the matter engine that turns taught processes into verified, published paperwork, and publishes its finished documents straight into skhub. <a href="https://sksec.skworld.io" target="_blank" rel="noopener">sksec</a> is the edge layer standing in front of it. All three are part of <a href="https://skworld.io" target="_blank" rel="noopener">SKWorld</a>, the sovereign AI ecosystem where you own the whole stack, from silicon to soul.</p>
       <div class="cta">
         <a class="btn bl" href="https://skworld.io" target="_blank" rel="noopener">🐧 Explore SKWorld</a>
         <a class="btn bl" href="https://skwrit.skworld.io" target="_blank" rel="noopener">✍️ Meet skwrit</a>
+        <a class="btn bl" href="https://sksec.skworld.io" target="_blank" rel="noopener">🛡️ Meet sksec</a>
       </div>
     </section>
   </div>
 
   <footer>
     <div class="wrap">
-      <div class="tag" style="font-size:1.05rem">Files. Chat. Video. Docs. All under your own roof.</div>
+      <div class="tag" style="font-size:1.05rem">Files. Chat. Video. Docs. Your agents in the room.</div>
       <div class="foot-links">
         <a href="https://skworld.io" target="_blank" rel="noopener">SKWorld</a>
         <a href="https://skstacks.skworld.io" target="_blank" rel="noopener">SKStacks</a>
+        <a href="https://sksec.skworld.io" target="_blank" rel="noopener">sksec</a>
         <a href="https://skgateway.skworld.io" target="_blank" rel="noopener">skgateway</a>
         <a href="https://lumina.skworld.io" target="_blank" rel="noopener">Lumina</a>
         <a href="https://atlas.skworld.io" target="_blank" rel="noopener">Atlas</a>
