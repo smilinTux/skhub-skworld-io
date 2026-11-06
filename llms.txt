@@ -16,6 +16,7 @@ triggers, and release gating through a dedicated lab test harness before new cap
 ## Links
 
 - [Live site](https://skhub.skworld.io)
+- [Architecture diagram, interactive](https://skhub.skworld.io/diagrams/skhub.architecture.html)
 
 ## About smilinTux
 
