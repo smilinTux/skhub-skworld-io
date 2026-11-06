@@ -123,6 +123,7 @@
         <a href="#security">Security</a>
         <a href="#calls">Calls</a>
         <a href="#flow">Workflows</a>
+        <a href="#architecture">Architecture</a>
         <a href="https://github.com/smilinTux/skstacks/blob/main/v1/ansible/optional/skhub/README.md" target="_blank" rel="noopener">Source</a>
         <a href="https://skworld.io" target="_blank" rel="noopener">🐧 SKWorld</a>
       </div>
@@ -290,6 +291,14 @@ sign-in:  user  ->  skhub login  ->  user_oidc  ->  sksso (Authentik)
         <div class="card"><h3>Fast webhooks</h3><p>A dedicated background-job worker handles webhook delivery for Nextcloud's <code>webhook_listeners</code> app. Without it, a webhook waits for the next 5-minute cron cycle; with it, delivery has been measured at about 4 seconds on a live instance.</p></div>
         <div class="card"><h3>skflow (Windmill)</h3><p>That fast delivery is what makes skhub useful as a trigger for the fleet's workflow engine: a file landing, a chat message, or a call can kick off a workflow almost immediately instead of minutes later.</p></div>
         <div class="card"><h3>skgateway for AI</h3><p>Nextcloud's built-in Assistant (chat, summarize, rewrite, translate, speech-to-text) runs against the operator's own self-hosted models through skgateway's model aliases. Image generation and cloud TTS are left disabled rather than silently falling back to a cloud default.</p></div>
+      </div>
+    </section>
+
+    <section id="architecture">
+      <h2><span class="n">§</span>Architecture: the whole stack on one map</h2>
+      <p>One interactive map of everything described on this page: people and agents coming in through the sksec edge, the digest-pinned Nextcloud core with its data stores and ClamAV, the optional Talk HPB and Collabora roles, and the fleet services beside it (sksso, skflow, skgateway, and a federated skhub). It is a standalone, self-contained HTML page: explorable, with motion and a dark/light toggle. It opens in a new tab.</p>
+      <div class="grid">
+        <div class="card"><h3>Component map</h3><p><span class="pill live" style="margin-left:0;margin-right:.5rem">Interactive</span>Trust boundaries, the optional roles, and every path in and out of Nextcloud, with summary cards for the core, security, and agent layers. <a href="diagrams/skhub.architecture.html" target="_blank" rel="noopener">Open ↗</a></p></div>
       </div>
     </section>
 
