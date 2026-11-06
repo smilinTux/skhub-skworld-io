@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "skhub architecture",
+    "subtitle": "SKWorld's sovereign collaboration hub: a hardened, digest-pinned Nextcloud deployment (SKStacks optional/skhub) with agents in the room",
+    "output": "skhub.architecture.html",
+    "quality_profile": "showcase",
+    "viewBox": [
+      1060,
+      640
+    ]
+  },
+  "components": [
+    {
+      "id": "users",
+      "type": "external",
+      "label": "People",
+      "sublabel": "browser or app",
+      "pos": [
+        20,
+        170
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "agents",
+      "type": "external",
+      "label": "Hermes agents",
+      "sublabel": "hermes-nextcloud-talk",
+      "pos": [
+        20,
+        300
+      ],
+      "size": [
+        118,
+        60
+      ],
+      "tag": "bot or user mode"
+    },
+    {
+      "id": "sksec",
+      "type": "security",
+      "label": "sksec edge",
+      "sublabel": "CrowdSec + bouncer",
+      "pos": [
+        170,
+        235
+      ],
+      "size": [
+        118,
+        60
+      ],
+      "tag": "fail closed"
+    },
+    {
+      "id": "sksso",
+      "type": "security",
+      "label": "sksso",
+      "sublabel": "Authentik OIDC",
+      "pos": [
+        170,
+        400
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "clamav",
+      "type": "security",
+      "label": "ClamAV",
+      "sublabel": "scans uploads",
+      "pos": [
+        330,
+        50
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "nextcloud",
+      "type": "backend",
+      "label": "Nextcloud core",
+      "sublabel": "files, chat, calls, docs",
+      "pos": [
+        330,
+        230
+      ],
+      "size": [
+        160,
+        100
+      ],
+      "tag": "pinned by digest"
+    },
+    {
+      "id": "talk",
+      "type": "backend",
+      "label": "Talk HPB",
+      "sublabel": "Janus + eturnal TURN",
+      "pos": [
+        330,
+        450
+      ],
+      "size": [
+        118,
+        60
+      ],
+      "tag": "optional"
+    },
+    {
+      "id": "collabora",
+      "type": "backend",
+      "label": "Collabora Online",
+      "sublabel": "live office docs",
+      "pos": [
+        470,
+        450
+      ],
+      "size": [
+        118,
+        60
+      ],
+      "tag": "optional"
+    },
+    {
+      "id": "mariadb",
+      "type": "database",
+      "label": "MariaDB",
+      "sublabel": "database",
+      "pos": [
+        470,
+        50
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "redis",
+      "type": "database",
+      "label": "Redis",
+      "sublabel": "cache",
+      "pos": [
+        610,
+        50
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "storage",
+      "type": "database",
+      "label": "File storage",
+      "sublabel": "NFS, S3, or skstor",
+      "pos": [
+        750,
+        50
+      ],
+      "size": [
+        118,
+        60
+      ],
+      "tag": "chosen up front"
+    },
+    {
+      "id": "webhooks",
+      "type": "messagebus",
+      "label": "Webhook worker",
+      "sublabel": "webhook_listeners",
+      "pos": [
+        610,
+        450
+      ],
+      "size": [
+        118,
+        60
+      ],
+      "tag": "~4s delivery"
+    },
+    {
+      "id": "skgateway",
+      "type": "external",
+      "label": "skgateway",
+      "sublabel": "Assistant models",
+      "pos": [
+        170,
+        530
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "skflow",
+      "type": "external",
+      "label": "skflow",
+      "sublabel": "Windmill",
+      "pos": [
+        920,
+        450
+      ],
+      "size": [
+        118,
+        60
+      ]
+    },
+    {
+      "id": "peer",
+      "type": "external",
+      "label": "Federated skhub",
+      "sublabel": "OCM federation",
+      "pos": [
+        920,
+        250
+      ],
+      "size": [
+        118,
+        60
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "skhub stack (SKStacks optional/skhub, Docker Swarm)",
+      "wraps": [
+        "clamav",
+        "nextcloud",
+        "talk",
+        "collabora",
+        "mariadb",
+        "redis",
+        "storage",
+        "webhooks"
+      ]
+    },
+    {
+      "kind": "security-group",
+      "label": "optional roles",
+      "wraps": [
+        "talk",
+        "collabora"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "users-edge",
+      "from": "users",
+      "to": "sksec",
+      "label": "HTTPS",
+      "variant": "emphasis"
+    },
+    {
+      "id": "agents-edge",
+      "from": "agents",
+      "to": "sksec",
+      "label": "Talk Bot API or Chat REST"
+    },
+    {
+      "id": "edge-core",
+      "from": "sksec",
+      "to": "nextcloud",
+      "label": "bouncer in front",
+      "variant": "security"
+    },
+    {
+      "id": "core-sso",
+      "from": "nextcloud",
+      "to": "sksso",
+      "label": "OIDC sign-in (user_oidc)",
+      "variant": "security"
+    },
+    {
+      "id": "core-clamav",
+      "from": "nextcloud",
+      "to": "clamav",
+      "label": "scan uploads",
+      "variant": "security"
+    },
+    {
+      "id": "core-db",
+      "from": "nextcloud",
+      "to": "mariadb",
+      "label": "SQL"
+    },
+    {
+      "id": "core-redis",
+      "from": "nextcloud",
+      "to": "redis",
+      "label": "cache"
+    },
+    {
+      "id": "core-storage",
+      "from": "nextcloud",
+      "to": "storage",
+      "label": "file data"
+    },
+    {
+      "id": "core-talk",
+      "from": "nextcloud",
+      "to": "talk",
+      "label": "calls and chat"
+    },
+    {
+      "id": "core-collabora",
+      "from": "nextcloud",
+      "to": "collabora",
+      "label": "office docs",
+      "variant": "dashed"
+    },
+    {
+      "id": "core-webhooks",
+      "from": "nextcloud",
+      "to": "webhooks",
+      "label": "file, chat, call events"
+    },
+    {
+      "id": "webhooks-skflow",
+      "from": "webhooks",
+      "to": "skflow",
+      "label": "triggers workflow",
+      "variant": "emphasis"
+    },
+    {
+      "id": "core-skgateway",
+      "from": "nextcloud",
+      "to": "skgateway",
+      "label": "Assistant via model aliases",
+      "variant": "dashed"
+    },
+    {
+      "id": "core-peer",
+      "from": "nextcloud",
+      "to": "peer",
+      "label": "OCM federation",
+      "variant": "dashed"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Core",
+      "items": [
+        "Nextcloud 31, pinned by SHA-256 digest, never a bare tag",
+        "MariaDB and Redis behind it, with a nightly db-backup sidecar",
+        "File storage decided once: shared NFS, external S3, or the fleet's own skstor"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Optional roles",
+      "items": [
+        "Talk HPB: Janus signaling plus eturnal STUN/TURN, TLS over 443 fallback",
+        "Collabora Online for real-time collaborative documents",
+        "Whiteboard, imaginary previews, notify_push, talk-recording"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Security",
+      "items": [
+        "sksec edge: CrowdSec detection and a fail-closed Traefik bouncer",
+        "SSO through user_oidc against sksso, with a break-glass local login",
+        "ClamAV on every upload; deploys refuse silent mount drift"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Agents and automation",
+      "items": [
+        "Hermes agents join rooms as a bot or as a real user account",
+        "Dedicated webhook worker hands events to skflow in about 4 seconds",
+        "Assistant runs on self-hosted models through skgateway; federation over OCM"
+      ]
+    }
+  ]
+}
