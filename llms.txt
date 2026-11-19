@@ -24,4 +24,4 @@ skhub is part of the **smilinTux sovereign AI ecosystem**, a suite of open-sourc
 its creators to give humans and AI agents genuine, authentic infrastructure they can own and
 trust. No corporate clouds, no black-box SaaS middlemen. MIT License.
 
-Other ecosystem projects: [SKWorld](https://skworld.io), [SKStacks](https://skstacks.skworld.io), [skgateway](https://skgateway.skworld.io), [Lumina](https://lumina.skworld.io), [Atlas](https://atlas.skworld.io), [skwrit](https://skwrit.skworld.io)
+Other ecosystem projects: [SKWorld](https://skworld.io), [SKStacks](https://skstacks.skworld.io), [skgateway](https://skgateway.skworld.io), [Lumina](https://lumina.skworld.io), [Atlas](https://atlas.skworld.io), [skwrit](https://skwrit.skworld.io), [SK Pages](https://skpages.skworld.io)
